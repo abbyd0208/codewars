@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+   
+
+    <pre>
+        <h1>
+                7 kyu Testing 1-2-3
+    
+        </h1>
+            Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+
+            Write a function which takes a list of strings and returns each line prepended by the correct number.
+            
+            The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+            
+            Examples:
+            
+            number([]) // => []
+            number(["a", "b", "c"]) // => ["1: a", "2: b", "3: c"]
+
+
+    </pre>
+    <div class="reault">
+  
+    </div>
+
+    <script>
+            // Solution 1 MAP -----------------------------
+            var numberA = function (array) {
+                if (array.length == 0) {
+                    return [];
+                }else{
+                    return array.map(function (item, idx) {
+                        return (idx + 1) + ":" + item;
+                    });
+                }
+            }
+            numberA(["a", "b", "c"]);
+
+            console.log( numberA(["a", "b", "c"]));
+            document.querySelector('.reault').innerHTML =  numberA(["a", "b", "c"])
+            
+            // Solution 2 FOR --------------------------------
+            var numberB = function (array) {
+                var newArr =[];
+                if (array.length == 0) {
+                    return [];
+                }else{
+                    for(var i=0; i<array.length; i++){
+                        newArr.push ((i + 1) +':'+array[i])
+                    }
+                }
+                return newArr
+            }
+            console.log( numberB(["a", "b", "c"]))
+
+            //Solution 3 MAP ES6 -----------------------------------
+            const numberC = array => array.map((n, i) => `${i + 1}: ${n}`);
+            console.log( numberC(["a", "b", "c"]))
+
+    </script>
+</body>
+</html>

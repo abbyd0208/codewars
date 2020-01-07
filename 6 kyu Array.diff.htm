@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        
+        // https://www.codewars.com/kata/array-dot-diff/train/javascript
+        // https://www.youtube.com/watch?v=BpieyklB8OE
+        // https://ruden91.github.io/blog/codewars-array-diff/
+
+        function array_diff(a,b){
+          
+            if(a == []) return []; 
+            a.find(function(item, index , array){
+                for(var i = 0; i < b.length; i++){
+
+                    if(item == b[i]){
+                        return a.splice(i,1)
+                    }
+                }
+            });
+        }
+
+        function array_diff_2(a,b){
+            var ans =[];
+            for(var i=0; i<a.length; i++){
+                if(b.indexOf(a[i]) === -1){
+                    ans.push(a[i])
+                }
+            }
+
+            for(var i=0; i<b.length; i++){
+                if(a.indexOf(b[i]) === -1){
+                    ans.push(b[i])
+                }
+            }
+        }
+
+        // array_diff([4,3],[4])
+        array_diff_2([4,3],[4])
+        // console.log()
+    </script>
+</body>
+</html>
